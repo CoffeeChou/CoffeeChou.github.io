@@ -1,4 +1,4 @@
 Coffee.github.io
 ================
 
-To manage my blo
+To manage my blog
