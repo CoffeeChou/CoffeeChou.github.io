@@ -1,0 +1,26 @@
+---
+layout: nil
+---
+<?xml version="1.0"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>To Be Better Coffee</title>
+    <link>http://coffeechou.github.io/</link>
+    <atom:link href="http://coffeechou.github.io/rss.xml" rel="self" type="application/rss+xml" />
+    <description>To be better Coffee</description>
+    <language>zh-cn</language>
+    <pubDate>{{ site.time | date: "%a, %d %b %Y %H:%M:%S %z" }}</pubDate>
+    <lastBuildDate>{{ site.time | date: "%a, %d %b %Y %H:%M:%S %z" }}</lastBuildDate>
+
+    {% for post in site.posts limit:10 %}
+    <item>
+      <title>{{ post.title }}</title>
+      <link>http://coffeechou.github.io/{{ post.url }}</link>
+      <pubDate>{{ post.date | date_to_string }}</pubDate>
+      <author>Coffee</author>
+      <guid>http://coffeechou.github.io/{{ post.id }}</guid>
+      <description>{{ post.content | xml_escape }}</description>
+    </item>
+    {% endfor %}
+  </channel>
+</rss>
