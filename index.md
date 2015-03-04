@@ -1,8 +1,12 @@
 ---
-layout: index
+layout: post
 title: Coffee 的博客
 ---
 
-<article id="post__content">
-  <h1 id="post__title">To Be Better Coffee</h1>
-</article>
+
+## 写点东西测试
+
+测试效果
+
+
+多写点
