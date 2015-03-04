@@ -11,8 +11,8 @@ title: Hosted Engine 的部署和遇到的一些问题
 
 
 * 作为主机的机器：使用 CentOS 7
-* 作为engine的虚拟机：使用CentOS 6.5
-* 存储：使用iSCSI
+* 作为 engine 的虚拟机：使用 CentOS 6.5
+* 存储：使用 iSCSI
 
 
 ## 部署前的准备
@@ -29,11 +29,11 @@ title: Hosted Engine 的部署和遇到的一些问题
 # yum -y update
   ```
 
-1. 设定好 engine 虚拟机的 ip
+2. 设定好 engine 虚拟机的 ip
 
   虚拟机的 ip 要提前定好，并将对应的ip和域名写到主机的`/etc/hosts`中（因为 Hosted-Engine 中，和 engine 虚拟机的交互使用的是 FQDN）
 
-1. 虚拟机的系统安装镜像
+3. 虚拟机的系统安装镜像
 
   在部署 hosted engine 过程中，会询问虚拟机系统安装镜像的位置（默认是 none），需要保存一个安装镜像到主机的某个目录下，然后填写这个镜像的目录
 
@@ -42,19 +42,19 @@ title: Hosted Engine 的部署和遇到的一些问题
   >在部署 hosted engine 过程中，配置网桥时，网络可能会断开，然后重启，有可能导致远程ssh连接中断，安装过程也会中断。如果可以，直接在主机上操作是最佳选择。
 部署
 
-1. 配置 ovirt-3.5 的源
+4. 配置 ovirt-3.5 的源
 
   ```
 # yum install http://resources.ovirt.org/pub/yum-repo/ovirt-release35.rpm
   ```
 
-1. 安装 ovirt-hosted-engine-setup 的包
+5. 安装 ovirt-hosted-engine-setup 的包
 
   ```
 # yum install ovirt-hosted-engine-setup
   ```
 
-### 部署 hosted engine
+## 部署 hosted engine
 
 1. 执行：`ovirt-hosted-engine-setup` 或者：`hosted-engine --deploy`
 
@@ -217,7 +217,7 @@ title: Hosted Engine 的部署和遇到的一些问题
   ```
 
 
-1. 虚拟机安装操作系统
+2. 虚拟机安装操作系统
 
   此时，hosted engine 的部署会停留在这个地方，等待虚拟机的操作系统安装完成：
 
@@ -248,7 +248,7 @@ title: Hosted Engine 的部署和遇到的一些问题
   ```
 
 
-1. 虚拟机部署 engine
+3. 虚拟机部署 engine
 
   此时，hosted engine 的部署会停留在这里，等待虚拟机部署完成engine：
 
@@ -483,16 +483,16 @@ title: Hosted Engine 的部署和遇到的一些问题
     * 如果在第一次确认过程中断了，那么虚拟机的安装信息不能写入到 answer 文件中，虚拟机处于不良状态，会重启失败：重启时提示没有可启动的设备。
     * 如果在第二次确认过程中断了，那么虚拟机配置了 engine 的信息无法传递给主机，主机也不能把自己加入到虚拟机engine的环境中。但是环境可以搭建起来，环境搭建起来后，可以看到这个环境中是没有主机，也没有虚拟机的。
 
-1. 尝试手动加入主机
+2. 尝试手动加入主机
 
   1. 关闭防火墙以及firewalld服务，添加主机。
 
     如果主机 install 进行途中，虚拟机 pause，使用命令 hosted-engine —vm-start 无法启动虚拟机，需要：
 
     1. hosted-engine --vm-poweroff
-    1. hosted-engine --vvm-start
+    2. hosted-engine --vvm-start
 
-  1. 虚拟机启动，engine正常运行，打开web界面看到主机已经成功加入。
+  2. 虚拟机启动，engine正常运行，打开web界面看到主机已经成功加入。
 
 
 ### 域名解析错误 FQDN
