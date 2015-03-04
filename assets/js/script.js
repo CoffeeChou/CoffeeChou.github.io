@@ -138,8 +138,8 @@ function afterPjax() {
   // Smooth scrolling
   $('.js-anchor-link').on('click', function() {
     var target = $(this.hash);
-    container.animate({scrollTop: target.offset().top + container.scrollTop() - 70}, 500, function() {
-      target.addClass('flash').delay(700).queue(function() {
+    container.animate({scrollTop: target.offset().top + container.scrollTop() }, 500, function() {
+      target.addClass('flash').delay(0).queue(function() {
         $(this).removeClass('flash').dequeue();
       });
     });
