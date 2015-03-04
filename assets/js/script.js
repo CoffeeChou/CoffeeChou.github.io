@@ -11,26 +11,37 @@ if ($(window).width() <= 1280) {
 }
 
 // Variables
-    tag1       = $('.所有文章'),
-    tag2       = $('.技术学习'),
-    tag3       = $('.翻译资料'),
-    tag4       = $('.绘画生活'),
+//    tag1       = $('.pl__all'),
+//    tag2       = $('js-label2'),
+//    tag3       = $('js-label3'),
+//    tag4       = $('js-label4'),
 var sidebar    = $('#sidebar'),
     container  = $('#post'),
     content    = $('#pjax'),
     button     = $('#icon-arrow');
 
 // Tags switcher
-var clickHandler = function(k) {
+//var clickHandler = function(k) {
+//  return function() {
+//    $(this).addClass('active').siblings().removeClass('active');
+//    tag1.hide();
+//    window['tag'+k].delay(50).fadeIn(350);
+//  }
+//};
+//for (var i = 1; i <= 4; i++) {
+//  $('#js-label' + i).on('click', clickHandler(i));
+//}
+var clickHandler = function(id) {
   return function() {
     $(this).addClass('active').siblings().removeClass('active');
-    tag1.hide();
-    window['tag'+k].delay(50).fadeIn(350);
+    $('.pl__all').hide();
+    $('.' + id).delay(50).fadeIn(350);
   }
 };
-for (var i = 1; i <= 4; i++) {
-  $('#js-label' + i).on('click', clickHandler(i));
-}
+
+$('#tags__ul li').each(function(index){
+  $('#' + $(this).attr('id')).on('click', clickHandler($(this).attr('id')));
+});
 
 // If sidebar has class 'mobile', hide it after clicking.
 tag1.on('click', function() {
