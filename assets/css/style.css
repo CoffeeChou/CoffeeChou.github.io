@@ -222,9 +222,7 @@ a {
 #posts-list {
   width: 420px;
   height: 100%;
-/*--------------------------------------*\
-  background: rgba(250, 250, 250, 0.95);
-\*--------------------------------------*/
+//  background: rgba(250, 250, 250, 0.95);
   background: url(/assets/img/mew.jpg);
   background-size:100% 100%;
   border-right: 1px solid #e5e8ec;
@@ -369,7 +367,7 @@ a {
   color: #D9D6CF;
   font-family: Yuppy;
   font-size: 18px;
-  line-height: 1.5;
+  line-height: 1.8;
   background: #404040;
   overflow-x: hidden;
   overflow-y: auto;
@@ -484,9 +482,9 @@ iframe {
   transition: transform .35s ease-in-out .1s; }
   #post__toc-trigger:hover {
     -webkit-transform: translateX(0);
-    -moz-transform: translateX(0);
-    -ms-transform: translateX(0);
-    -o-transform: translateX(0);
+    -moz-transform: translateX(0); 
+    -ms-transform: translateX(0); 
+    -o-transform: translateX(0); 
     transform: translateX(0); }
   @media screen and (max-device-width: 1280px) {
     #post__toc-trigger {
@@ -497,7 +495,7 @@ iframe {
   height: 100%;
   padding-top: 30px;
   background: rgba(26, 26, 26, 0.9);
-  border-top: 1px solid #e5e8ec;
+  border-top: 1px solid #e5e8ec; 
   border-left: 1px solid #e5e8ec;
   border-radius: 10px 0 0 0;
   display: block;
