@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Hosted Engine 的部署和遇到的一些问题
+category: 技术学习
+keywords: oVirt, Hosted Engine
 ---
 
 将以前的博客搬运过来 ;-)
