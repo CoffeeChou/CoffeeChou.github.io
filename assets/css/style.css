@@ -3,6 +3,7 @@
    @author Peiwen Lu (P233)
    https://github.com/P233/3-Ghost
 \*---------------------------------*/
+
 /*---------------------------------*\
    Fonts
 \*---------------------------------*/
@@ -128,12 +129,12 @@ a {
   padding: 0;
   font-size: 17px;
   border-top: 1px solid #3c4149;
-  border-bottom: 1px solid #525965;
+  border-bottom: 1px solid #000000;
   list-style: none; }
 
 .tags__li {
   padding: 12px 35px 9px;
-  border-top: 1px solid #525965;
+  border-top: 1px solid #000000;
   border-bottom: 1px solid #3c4149;
   cursor: pointer; }
   .tags__li.active {
@@ -182,7 +183,7 @@ a {
     font-size: 18px;
     line-height: 44px;
     text-align: center;
-    border-top: 1px solid #525965;
+    border-top: 1px solid #000000;
     float: left; }
 
 #icon-email {
@@ -191,7 +192,7 @@ a {
     content: "\e800"; }
 
 #icon-feed {
-  border-left: 1px solid #525965; }
+  border-left: 1px solid #000000; }
   #icon-feed:before {
     content: "\e802"; }
 
@@ -204,7 +205,7 @@ a {
   transition: color .3s, background .3s; }
   .tags-btn:hover {
     color: #f7f7f7;
-    background: #40464f; }
+    background: #404040; }
 
 /*---------------------------------*\
    Posts List
@@ -356,10 +357,10 @@ a {
 \*---------------------------------*/
 #post {
   height: 100%;
-  color: #2c353d;
+  color: #D9D6CF;
   font-size: 18px;
   line-height: 1.5;
-  background: white;
+  background: #404040;
   overflow-x: hidden;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch; }
