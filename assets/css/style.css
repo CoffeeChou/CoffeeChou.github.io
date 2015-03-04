@@ -8,14 +8,14 @@
    Fonts
 \*---------------------------------*/
 @font-face {
-  font-family: "fontello";
-  src: url("../font/fontello.eot");
-  src: url("../font/fontello.eot#iefix") format("embedded-opentype"), url("../font/fontello.woff") format("woff"), url("../font/fontello.ttf") format("truetype"), url("../font/fontello.svg#fontello") format("svg");
+  font-family: Yuppy;
+  src: url("../font/YuppySC-Regular-Roman.eot");
+  src: url("../font/YuppySC-Regular-Roman.eot#iefix") format("embedded-opentype"), url("../font/YuppySC-Regular-Roman.woff") format("woff"), url("../font/YuppySC-Regular-Roman.ttf") format("truetype"), url("../font/YuppySC-Regular-Roman.svg#fontello") format("svg");
   font-weight: normal;
   font-style: normal; }
 
 .fontello, .post__toc-li:before {
-  font-family: "fontello";
+  font-family: inherit;
   speak: none;
   font-variant: normal;
   text-transform: none;
@@ -358,6 +358,7 @@ a {
 #post {
   height: 100%;
   color: #D9D6CF;
+  font-family: Yuppy;
   font-size: 18px;
   line-height: 1.5;
   background: #404040;
