@@ -1,6 +1,6 @@
 permalink: /:year/:month/:day/:title.html
 markdown: redcarpet
-highlighter: true
+pygments: true
 
 # 作者信息
 author:
