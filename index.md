@@ -3,10 +3,5 @@ layout: post
 title: Coffee 的博客
 ---
 
+# To Be Better Coffee
 
-## 写点东西测试
-
-测试效果
-
-
-多写点
