@@ -55,6 +55,9 @@ Docker 有两个主要组件：
 
 Docker 使用的是 client-server 的架构。Docker *client* 和 Docker *daemon* 进行会话，进行繁重的构建、运行和分发 Docker container 的工作。Docker client 和 Docker daemon 都*可以*运行在同一个系统中，或者你可以将一个 Docker client 连接到远程的 Docker daemon 中。Docker client 和 Docker daemon 通过 socket 或 RESTful API 进行会话。
 
+<center>![Docker 的架构](/public/imgs/architecture.svg)</center>
+<center><i>Docker 的架构</i></center>
+
 ### Docker daemon
 
 如上图所示，Docker daemon 运行在主机上。用户不会直接与 Docker daemon 而是通过 Docker client 进行交互。

@@ -27,6 +27,7 @@ OpenStack 是由许多不同的活动的部分组成的。由于其开放性，�
 从社区拖了一张图片过来：
 
 <center>![OpenStack 架构](/public/imgs/openstack_havana_conceptual_arch.png)</center>
+<center><i>OpenStack 架构</i></center>
 
 * **Nova**: Nova 是在 OpenStack 后台的一个主要计算引擎。它是一个“构造控制器”，用来部署和管理大量的虚拟机和其他实例，以处理计算任务。
 
