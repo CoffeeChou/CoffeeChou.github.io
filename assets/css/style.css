@@ -1259,3 +1259,9 @@ pre > code {
   color: #2aa198; }
 
 /* Literal.Number.Integer.Long */
+
+/* 设置图片居中 */
+.center {
+  text-align: center;
+  margin: 0 auto;
+}
