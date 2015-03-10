@@ -1,5 +1,4 @@
 permalink: /:year/:month/:day/:title.html
-markdown: redcarpet
 pygments: true
 
 # 作者信息
@@ -7,3 +6,7 @@ author:
   name: Coffee
   email: coffee.zyr@gmail.com
 
+# 使用 markdown 格式
+markdown: redcarpet
+redcarpet:
+    extensions: ["tables"]
