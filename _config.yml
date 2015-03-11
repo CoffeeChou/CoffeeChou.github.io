@@ -9,4 +9,4 @@ author:
 # 使用 markdown 格式
 markdown: redcarpet
 redcarpet:
-    extensions: ["tables"]
+    extensions: ["tables", "highlight"]
