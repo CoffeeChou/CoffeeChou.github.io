@@ -14,16 +14,11 @@
     <aside id="sidebar">
       <nav id="tags">
         <a href="/index.html" id="avatar"></a>
-        <!--在还不会的时候先用笨办法吧-->
         <ul id="tags__ul">
           <li id="pl__all" class="tags__li tags-btn active">所有文章</li>
           {% for category in site.categories %} 
             <li id="{{ category[0] }}" class="tags__li tags-btn">{{ category[0] }}</li>
           {% endfor %}
-
-          <!--li id="js-label2" class="tags__li tags-btn">技术学习</li>
-          <li id="js-label3" class="tags__li tags-btn">翻译资料</li>
-          <li id="js-label4" class="tags__li tags-btn">绘画生活</li--!>
         </ul>
 
         <div id="tags__bottom">
@@ -46,10 +41,12 @@
         </nav>
       </div> <!-- end #posts-list -->
     </aside> <!-- end #sidebar -->
-
     <div id="post">
       <div id="pjax">
         {{ content }}
+        <!--添加表格边框，不然看不出来是个表格-->
+        <table id="table">
+        </table>
       </div> <!-- end #pjax -->
 
       <div id="post__toc-trigger">

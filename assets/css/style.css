@@ -384,6 +384,28 @@ a {
     #post {
       font-size: 14px; } }
 
+/* 表格颜色，否则看不出是个表格 */
+table {
+  font-family: Yuppy;
+  width:100%;
+  border-collapse: collapse;}
+table td, table th {
+    font-size: 0.9em;
+    color: #33caa6;
+//    border:1px solid #ffffff;
+    padding:3px 7px 2px 7px;}
+    tr { background: #fdfdfd;} 
+    tr:nth-child(2n){ background: #ECEFF4;} 
+    tr{ background-color: expression((this.sectionRowIndex % 2 == 0) ?   "#fdfdfd" : "#e5e8ec" );} 
+
+table th {
+    font-size:1em;
+    text-align: left;
+    padding-top:5px;
+    padding-bottom:4px;
+    background-color:#33caa6;
+    color:#ffffff;}
+
 #pjax {
   padding: 0 5% 30px; }
   #pjax.fadeIn {
@@ -1265,3 +1287,4 @@ pre > code {
   text-align: center;
   margin: 0 auto;
 }
+
