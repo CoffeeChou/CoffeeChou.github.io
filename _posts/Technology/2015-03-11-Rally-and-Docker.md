@@ -135,9 +135,7 @@ Rally 的更多使用方法，请参考：[Rally 官方文档](https://rally.rea
 > ls: cannot open directory .: Permission denied
 >   ```
 > * 尝试更改访问权限，结果失败～用 root 进入 container，也没有权限... 
->   * 最后的解决办法是：**关闭 SELinux**。
-
-
+>   * 最后的解决办法是**关闭 SELinux**: `setenforce 0`
 
 ## 参考文档
 
