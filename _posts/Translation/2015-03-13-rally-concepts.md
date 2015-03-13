@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Rally 的一些概念
+title: Rally 的概念
 category: 翻译学习
 keywords: OpenStack, Rally
 ---
