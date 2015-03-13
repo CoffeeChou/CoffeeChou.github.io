@@ -7,17 +7,17 @@ keywords: OpenStack, Rally
 
 为了深入了解 Rally，又翻译一篇文章：[Rally 的概念](https://wiki.openstack.org/wiki/Rally/Concepts)。
 
-## 主要概念
+# 主要概念
 
 这篇文章将详细说明一些在整个 Rally 中使用的设计概念 (例如 **benchmark scenarios**、**contexts** 等)。对这些概念有一个很好的理解对于成功贡献于 Rally 来说是必要的。
 
-### Benchmark scenarios
+## Benchmark scenarios
 
-#### 概念
+### 概念
 
 **Benchmark scenarios** (标准测试场景) 的概念在 Rally 里是一个核心。标准测试场景就是 Rally 实际用来**测试 OpenStack 部署环境的性能**的。它们也在**标准测试任务配置文件**中发挥着主要的构建块的作用。每一个标准测试场景会执行一套**小的原子操作**，因此测试一些**简单的用例**，一般是一些特定的 OpenStack 项目。例如，***"NovaServers"*** 场景组包含了在 ***nova*** 中采用的几种可用的基本操作场景。例如，该组中的 ***"boot_and_delete_server"*** 标准测试场景能够测试只有**两个简单操作**的一系列性能：它首先 (以可定值的参数) **启动**一台服务器然后再**删除**它。
 
-#### 使用者的角度
+### 使用者的角度
 
 从使用者的角度看，执行一些标准测试任务时，Rally 启动了不同的标准测试场景。**Benchmark task** 本质上是针对一些 OpenStack 部署环境执行的一套标准测试场景，通过 CLI 命令行特定 (以及可定值) 的方式执行的：
 
@@ -61,7 +61,7 @@ keywords: OpenStack, Rally
 
 注意在其中的每一个场景的配置中，标准测试场景实际上启动了 **3 次** (在 **"runner"** 字段中指定)。可以在 **"runner"** 中指定更多细节，以定义标准测试场景究竟应该如何启动；我们将在下面的 **"Sceario Runners"** 部分进行详细说明。
 
-#### 开发者的角度
+### 开发者的角度
 
 从开发者的角度看，标准测试场景是一个被 **@scenario** 修饰器标记的方法，并放在一个继承于基本 [**Scenario**](https://github.com/stackforge/rally/blob/master/rally/benchmark/scenarios/base.py#L40) 类和一些位于 [*rally.benchmark.scenarios*](https://github.com/stackforge/rally/tree/master/rally/benchmark/scenarios) 子包的类中。在一个 scenario 类中可能有任意多个标准测试场景；其中的每个类都应该 (在任务配置文件) 中被引用为 *ScenarioClassName.method_name*。
 
@@ -89,13 +89,13 @@ class MyScenario(base.Scenario):
         """Do something with the cloud."""
 ```
 
-### Scenario runners
+## Scenario runners
 
-#### 概念
+### 概念
 
 Rally 中的 **Scenario Runners** 是控制执行类型和标准测试场景顺序的实体对象。它支持**在云上创建负载的不同策略**，包括模拟不同用户的*并发请求*、周期性负载、日益增长的负载等等。
 
-#### 从使用者角度
+### 使用者角度
 
 The user can specify which type of load on the cloud he would like to have through the "runner" section in the task configuration file:
 使用者可以通过在**任务配置文件**中的 **"runner"** 部分指定他想对云进行测试的负载类型：
@@ -138,7 +138,7 @@ The user can specify which type of load on the cloud he would like to have throu
 
 而且，所有的 scenario runners 可以提供 (也是通过配置文件的 **"runner" 部分**) 一个**可选参数** *"timeout"*，**这个参数定义每个标准测试场景的超时时间 (以秒为单位)**。
 
-#### 开发者角度
+### 开发者角度
 
 如果需要的话，是可以扩展 Rally 的 Scenario Runner 类型的。基本上，每个 scenario runner 应该实现为基本 [**ScenarioRunner**](https://github.com/stackforge/rally/blob/master/rally/benchmark/runners/base.py#L137) 类的子类，且放在 [rally.benchmark.runners 包](https://github.com/stackforge/rally/tree/master/rally/benchmark/runners)中。
 
@@ -182,13 +182,13 @@ class MyScenarioRunner(base.ScenarioRunner):
         return base.ScenarioRunnerResult(results)
 ```
 
-### Benchmark contexts
+## Benchmark contexts
 
-#### 概念
+### 概念
 
 在 Rally 中，**contexts** 的概念本质上是用来定义在标准测试场景中以不同**环境**类型来启动的。这些环境通常由一些参数来定义的，如将在 OpenStack 项目中显示的 **tenant 和 users** 的数量、授权给这些用户的 **roles**、扩展或缩小**配额**等。
 
-#### 使用者的角度
+### 使用者的角度
 
 从使用者的角度看，Rally 中的 context 是可以通过**任务配置文件**来管理的。在一个典型的配置文件中，每个要运行的标准测试场景不仅仅由参数信息和要启动多少次来提供，也由一个特殊的 **"context"** 部分提供。在这个部分中，用户可以配置他所希望他的场景运行的 context 的数量。
 
@@ -223,7 +223,7 @@ class MyScenarioRunner(base.ScenarioRunner):
 }
 ```
 
-#### 开发者角度
+### 开发者角度
 
 从开发者的角度看，contexts 的管理是通过 **Context 类** 实现的。每个可以在任务配置文件中指定的 context 类型与一个特定的基本 [**Context**](https://github.com/stackforge/rally/blob/master/rally/benchmark/context/base.py) 类的子类相对应，放在 [**rally.benchmark.context**](https://github.com/stackforge/rally/tree/master/rally/benchmark/context) 模块中。每个 context 类要以一个特殊的 **@context()** 修饰器进行修饰，并实现一个相当简单的 **interface**：
 
@@ -300,6 +300,5 @@ context1.cleanup()
 **隐藏 context** 不能由最终使用者像上述那样通过任务配置文件案进行配置，但是可以通过标准测试场景的开发者通过一个特殊的 *@base.scenario(context={...})* 修饰器指定。隐藏 context 通常用来满足一些特定的标准测试场景 - 指定需求，不需要最终使用者去管住的。例如，隐藏的 [**"cleanup" context**](https://github.com/stackforge/rally/blob/master/rally/benchmark/context/cleanup/context.py#L70-L90) 用于在标准测试之后进行一般的清理。因此，使用者不能通过任务配置更改它的配置，而破坏了他的云环境。
 
 如果您想要更深入了解，请阅读 [context manager](https://github.com/stackforge/rally/blob/master/rally/benchmark/context/base.py#L78-L117) 类，它实现了前面所描述的算法。
-
 
 
