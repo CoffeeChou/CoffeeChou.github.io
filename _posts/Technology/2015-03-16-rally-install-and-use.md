@@ -7,7 +7,7 @@ keywords: OpenStack, Rally, 安装, 使用
 
 ## 环境
 
-之前在 CentOS 6.5 上安装的 rally，虽然最后是能用，但由于支持不好，问题很多，这次在 CentOS 7 上做尝试。
+之前在 CentOS 6.5 上安装的 rally，虽然最后是能用，但由于 CentOS 6.5 上的 python 版本是 2.6，支持不是很好 (rally 的 python 版本是 2.7)，问题很多，这次在 CentOS 7 上做尝试。
 
 
 ## 安装
