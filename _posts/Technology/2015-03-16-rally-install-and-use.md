@@ -5,8 +5,6 @@ category: 技术探讨
 keywords: OpenStack, Rally, 安装, 使用
 ---
 
-之前在 CentOS 6.5 上安装的 rally，虽然最后是能用，但由于支持不好，问题很多，这次在 CentOS 7 上做尝试。
-
 ## 环境
 
 之前在 CentOS 6.5 上安装的 rally，虽然最后是能用，但由于支持不好，问题很多，这次在 CentOS 7 上做尝试。
