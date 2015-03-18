@@ -438,7 +438,7 @@ Nova etc.
     <center>![Rally Failed Result](/public/imgs/rally_failed_result1.png)</center>
     <center><i>Rally 测试失败时的 Overview 信息</i></center>
     </br>
-    <center>![Rally Failed Result](/public/imgs/rally_failed_result1.png)</center>
+    <center>![Rally Failed Result](/public/imgs/rally_failed_result2.png)</center>
     <center><i>Rally 测试失败时的 Failures 信息</i></center>
 
 1. 此外，可以查看测试的状态和详细信息：
