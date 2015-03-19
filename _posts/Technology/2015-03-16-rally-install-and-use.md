@@ -65,7 +65,7 @@ Command categories:
   {version,bash-completion,info,use,task,show,verify,deployment}
 ```
 
-* 说明 rally 之后可以加上以上参数，要查看各个参数的帮助信息可以像这样：
+* 说明 rally 之后可以加上以上子命令，要查看各个子命令的帮助信息可以像这样：
 
 ```
 # rally [Command] --help
