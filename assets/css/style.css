@@ -632,7 +632,8 @@ iframe {
   padding-top: 1em;
   font-size: .9em;
   text-align: center;
-  border-top: 2px solid rgba(229, 232, 236, 0.5); }
+//  border-top: 2px solid rgba(229, 232, 236, 0.5); 
+  }
   #copyright > a {
     color: #2eb695; }
     #copyright > a:hover {

@@ -150,7 +150,7 @@ function afterPjax() {
   var ds_loaded = false,
       top = $('#disqus_thread').offset().top;
       identifier = $('#post__title').data('identifier');
-  window.disqus_shortname = 'Coffee';
+  window.disqus_shortname = $('#disqus_thread').attr('name');
   window.disqus_identifier = identifier;
 
   function check() {

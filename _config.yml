@@ -9,4 +9,8 @@ author:
 # 使用 markdown 格式
 markdown: redcarpet
 redcarpet:
-    extensions: ["tables", "highlight"]
+  extensions: ["tables", "highlight"]
+
+# disqus 设置
+disqus:
+  shortname: Coffee
