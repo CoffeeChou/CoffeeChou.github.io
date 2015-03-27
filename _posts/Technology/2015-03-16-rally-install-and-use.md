@@ -47,6 +47,12 @@ keywords: OpenStack, Rally, 安装, 使用
 
     * 然后就可以用了，多么简单0.0
 
+    > #### 注：
+    > * Rally 默认情况下不会将信息输入日志。
+    > * 可以使用 `--log-dir` 和 `--log-file` 指定写入日志的目录和文件。
+    > * 为了方便：`alias rally='rally --log-dir DIR --log-file FILE'`。
+    > * 之后执行测试时，可加上参数 `-v/--verbose` 或 `-d/--debug`，这样，输出信息就会写入所指定的日志中。
+
 ## 使用方法
 
 由于我们之前安装 Rally 的时候使用的是 `./install_rally.sh -v`，即使用了虚拟环境，所以，每次使用 rally 之前，要先激活虚拟环境，才能使用 rally：
