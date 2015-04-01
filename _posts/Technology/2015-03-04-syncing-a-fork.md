@@ -43,12 +43,12 @@ Fork 一个上游的项目，然后将 Fork 的项目 clone 到本地，使劲�
         ```
         $ git checkout master
         Switched to branch 'master'
+        ```
 
   1. 获取上游分支：
 
         ```
         $ git fetch upstream
-        ```
         ```
 
   1. 合并上游的 `master` 分支到本地的 `master` 分支上：
