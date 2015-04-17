@@ -97,7 +97,6 @@ Rally 中的 **Scenario Runners** 是控制执行类型和标准测试场景顺�
 
 ### 使用者角度
 
-The user can specify which type of load on the cloud he would like to have through the "runner" section in the task configuration file:
 使用者可以通过在**任务配置文件**中的 **"runner"** 部分指定他想对云进行测试的负载类型：
 
 ```json
