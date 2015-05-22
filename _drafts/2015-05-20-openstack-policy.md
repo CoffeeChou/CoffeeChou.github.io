@@ -1,6 +1,6 @@
 ---
 layout: post
-title: OpenStack 的权限控制 -- 从测试角度
+title: OpenStack 的权限控制 -- 测试角度
 category: 技术探讨
 keywords: OpenStack, policy
 ---
@@ -132,9 +132,9 @@ OpenStack 的权限控制通过配置文件 policy.json 来实现。
 
 ### 操作步骤
 
-1. 创建角色 "test_role"；
-1. 创建 3 个用户 "test_member", "test_admin", "test_role"；
-1. 创建项目 "test_project"；
+1. 创建角色 "test\_role"；
+1. 创建 3 个用户 "test\_member", "test\_admin", "test\_role"；
+1. 创建项目 "test\_project"；
 1. 修改配置文件 `/etc/nova/policy.json`，定义一个角色：
 
     ```
@@ -149,26 +149,31 @@ OpenStack 的权限控制通过配置文件 policy.json 来实现。
     ... ...
     ```
 1. 保存配置文件，并重启 nova 相关的服务；
-1. 登录到 dashboard，将用户 "test_member" 和 "test_admin" 添加到 "test_project" 租户(项目)中：为 "test_member" 分配 "_member_" 角色，为 "test_role" 分配 "test_role" 角色，为 "test_admin" 分配 "admin" 角色；
-1. 用 "test_member" 用户登录到 dashboard，尝试创建实例和卷；
-1. 用 "test_role" 用户登录到 dashboard，尝试创建实例和卷；
-1. 用 "test_admin" 用户登录到 dashboard，尝试创建实例和卷；
+1. 登录到 dashboard，将用户 "test\_member" 和 "test\_admin" 添加到 "test\_project" 租户(项目)中：为 "test\_member" 分配 "\_member\_" 角色，为 "test\_role" 分配 "test\_role" 角色，为 "test\_admin" 分配 "admin" 角色；
+1. 用 "test\_member" 用户登录到 dashboard，尝试创建实例和卷；
+1. 用 "test\_role" 用户登录到 dashboard，尝试创建实例和卷；
+1. 用 "test\_admin" 用户登录到 dashboard，尝试创建实例和卷；
 1. 用 "admin" 用户登录到 dashboard，尝试创建实例和卷；
 
 > #### 注：
 > * "admin" 用户是用 fuel 部署后默认创建的用户，属于 admin 租户，具有 admin 角色权限；
-> * "_member_" 角色是 fuel 部署后默认创建的角色；
+> * "\_member\_" 角色是 fuel 部署后默认创建的角色；
 > * 笔者为了方便，直接用 dashboard 进行测试，也可以登录到 Controller 节点进行相应的测试：
 >   * 创建实例：`nova boot ...`
 >   * 创建卷：`cinder create ...`
 
 ### 预期结果
 
-* "test_member" 用户不能创建实例，也不能创建卷；
-* "test_admin" 用户可以创建实例，但不能创建卷；
-* "test_role" 用户可以创建实例，但不能创建卷；
-* "admin" 用户不能创建实例，但可以创建卷；
+* 只有 `test\_role` 角色和 `admin` 角色可以创建实例
+* 只有 `admin 租户里的 admin 角色` 才能创建卷
+  * "test\_member" 用户不能创建实例，也不能创建卷；
+  * "test\_admin" 用户可以创建实例，但不能创建卷；
+  * "test\_role" 用户可以创建实例，但不能创建卷；
+  * "admin" 用户不能创建实例，但可以创建卷；
 
 ### 实际结果 
 
 **与预期结果相同**
+
+
+> 测完记得把环境改回去喔 (～￣.￣)～
