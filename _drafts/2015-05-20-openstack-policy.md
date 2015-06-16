@@ -132,9 +132,64 @@ OpenStack 的权限控制通过配置文件 policy.json 来实现。
 
 ### 操作步骤
 
-1. 创建角色 "test\_role"；
+1. 创建角色 "test\_role"：
+
+    ```
+# keystone role-create --name test_role
++----------+----------------------------------+
+| Property |              Value               |
++----------+----------------------------------+
+|    id    | 966c7bf2a5de449d9fe86bd7a4cf7056 |
+|   name   |            test_role             |
++----------+----------------------------------+
+    ```
 1. 创建 3 个用户 "test\_member", "test\_admin", "test\_role"；
-1. 创建项目 "test\_project"；
+
+    ```
+# keystone user-create --name test_member --pass abc123
++----------+----------------------------------+
+| Property |              Value               |
++----------+----------------------------------+
+|  email   |                                  |
+| enabled  |               True               |
+|    id    | fa9a271d8fa94a3ca56d761689fef037 |
+|   name   |           test_member            |
+| username |           test_member            |
++----------+----------------------------------+
+[root@node-1 ~]# keystone user-create --name test_role --pass abc123
++----------+----------------------------------+
+| Property |              Value               |
++----------+----------------------------------+
+|  email   |                                  |
+| enabled  |               True               |
+|    id    | bb5487cbc0f94894b09704fc3aad23c8 |
+|   name   |            test_role             |
+| username |            test_role             |
++----------+----------------------------------+
+[root@node-1 ~]# keystone user-create --name test_admin --pass abc123
++----------+----------------------------------+
+| Property |              Value               |
++----------+----------------------------------+
+|  email   |                                  |
+| enabled  |               True               |
+|    id    | b4d4d7b7080f4550903c49c85eff747b |
+|   name   |            test_admin            |
+| username |            test_admin            |
++----------+----------------------------------+
+    ```
+1. 创建项目 "test\_project"：
+
+    ```
+# keystone tenant-create --name test_project
++-------------+----------------------------------+
+|   Property  |              Value               |
++-------------+----------------------------------+
+| description |                                  |
+|   enabled   |               True               |
+|      id     | d2058c82eb83413c871ac01c0a7709a8 |
+|     name    |           test_project           |
++-------------+----------------------------------+
+    ```
 1. 修改配置文件 `/etc/nova/policy.json`，定义一个角色：
 
     ```
@@ -149,22 +204,19 @@ OpenStack 的权限控制通过配置文件 policy.json 来实现。
     ... ...
     ```
 1. 保存配置文件，并重启 nova 相关的服务；
-1. 登录到 dashboard，将用户 "test\_member" 和 "test\_admin" 添加到 "test\_project" 租户(项目)中：为 "test\_member" 分配 "\_member\_" 角色，为 "test\_role" 分配 "test\_role" 角色，为 "test\_admin" 分配 "admin" 角色；
-1. 用 "test\_member" 用户登录到 dashboard，尝试创建实例和卷；
-1. 用 "test\_role" 用户登录到 dashboard，尝试创建实例和卷；
-1. 用 "test\_admin" 用户登录到 dashboard，尝试创建实例和卷；
-1. 用 "admin" 用户登录到 dashboard，尝试创建实例和卷；
+1. 将用户 "test\_member", "test_role" 和 "test\_admin" 添加到 "test\_project" 租户(项目)中：为 "test\_member" 分配 "\_member\_" 角色，为 "test\_role" 分配 "test\_role" 角色，为 "test\_admin" 分配 "admin" 角色；
+1. 尝试以 "test\_member" 用户创建实例和卷；
+1. 尝试以 "test\_role" 用户创建实例和卷；
+1. 尝试以 "test\_admin" 用户创建实例和卷；
+1. 尝试以 "admin" 用户创建实例和卷；
 
 > #### 注：
 > * "admin" 用户是用 fuel 部署后默认创建的用户，属于 admin 租户，具有 admin 角色权限；
 > * "\_member\_" 角色是 fuel 部署后默认创建的角色；
-> * 笔者为了方便，直接用 dashboard 进行测试，也可以登录到 Controller 节点进行相应的测试：
->   * 创建实例：`nova boot ...`
->   * 创建卷：`cinder create ...`
 
 ### 预期结果
 
-* 只有 `test\_role` 角色和 `admin` 角色可以创建实例
+* 只有 `test_role` 角色和 `admin` 角色可以创建实例
 * 只有 `admin 租户里的 admin 角色` 才能创建卷
   * "test\_member" 用户不能创建实例，也不能创建卷；
   * "test\_admin" 用户可以创建实例，但不能创建卷；
@@ -173,7 +225,6 @@ OpenStack 的权限控制通过配置文件 policy.json 来实现。
 
 ### 实际结果 
 
-**与预期结果相同**
 
 
 > 测完记得把环境改回去喔 (～￣.￣)～
