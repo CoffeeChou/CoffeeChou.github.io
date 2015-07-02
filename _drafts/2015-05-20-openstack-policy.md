@@ -1,6 +1,6 @@
 ---
 layout: post
-title: OpenStack 的权限控制 -- 测试角度
+title: 从测试者的角度玩 OpenStack 的权限控制
 category: 技术探讨
 keywords: OpenStack, policy
 ---
@@ -125,7 +125,7 @@ OpenStack 的权限控制通过配置文件 policy.json 来实现。
     "compute:stop": "rule:admin_or_owner",
     "compute:unlock_override": "rule:admin_api",
     ```
-* 若规则处置空，则所有用户均可执行该操作。
+* 若规则设置为空，则所有用户均可执行该操作。
 
 
 ## 测试
@@ -198,12 +198,12 @@ OpenStack 的权限控制通过配置文件 policy.json 来实现。
 1. 修改配置文件 `/etc/nova/policy.json`，定义一些规则：
 
     ```
-    "compute:create": "role:test_role or role:admin",
+    "compute:create": "role:admin",
     ... ...
-    "volume:create": "rule:super_admin",
+    "volume:create": "rule:super_admin or role:test_role",
     ... ...
     ```
-1. 保存配置文件，并重启 nova 相关的服务；
+1. 保存配置文件，并重启**所有控制节点**的 nova 相关的服务；
 1. 将用户 "test\_member", "test_role" 和 "test\_admin" 添加到 "test\_project" 租户(项目)中：为 "test\_member" 分配 "\_member\_" 角色，为 "test\_role" 分配 "test\_role" 角色，为 "test\_admin" 分配 "admin" 角色；
 1. 尝试以 "test\_member" 用户创建实例和卷；
 1. 尝试以 "test\_role" 用户创建实例和卷；
@@ -217,14 +217,11 @@ OpenStack 的权限控制通过配置文件 policy.json 来实现。
 ### 预期结果
 
 * 只有 `test_role` 角色和 `admin` 角色可以创建实例
-* 只有 `admin 租户里的 admin 角色` 才能创建卷
+* 只有 `admin 租户里的 admin 角色` 和拥有 `test_role` 角色的用户才能创建卷
   * "test\_member" 用户不能创建实例，也不能创建卷；
   * "test\_admin" 用户可以创建实例，但不能创建卷；
-  * "test\_role" 用户可以创建实例，但不能创建卷；
-  * "admin" 用户不能创建实例，但可以创建卷；
-
-### 实际结果 
+  * "test\_role" 用户不能创建实例，但能创建卷；
+  * "admin" 用户能创建实例，也可以创建卷；
 
 
-
-> 测完记得把环境改回去喔 (～￣.￣)～
+> 测完记得把环境**改回去喔**~
