@@ -99,7 +99,7 @@ boot-runcommand-delete.json  boot-runcommand-delete-with-disk.json  boot-runcomm
 
 查了日志之后，发现 Rally 创建虚拟机时，没有指定 key name，但 SSH 时使用 key name 去连接。  --当然连不上了。
 
-## 查代码
+## BUG 跟踪
 
 找到 VMTasks 测试的代码：`rally/rally/benchmark/scenarios/vm/vmtasks.py`
 
@@ -147,3 +147,73 @@ def boot_runcommand_delete(self, image, flavor,
 
 ... ...
 ```
+
+看到创建虚拟机时，其实已经指定了 `key_name`，调用的是 `_boot_server_with_fip` 方法。
+
+找到 "\_boot\_server\_with\_fip" 方法：`rally/rally/benchmark/scenarios/vm/utils.py`
+
+```python
+def _boot_server_with_fip(self, image, flavor,
+                          use_floating_ip=True, floating_network=None,
+                          wait_for_ping=True, **kwargs):
+    """Boot server prepared for SSH actions."""
+    kwargs["auto_assign_nic"] = True
+    server = self._boot_server(image, flavor, **kwargs)
+
+    if not server.networks:
+        raise RuntimeError(
+            "Server `%(server)s' is not connected to any network. "
+            "Use network context for auto-assigning networks "
+            "or provide `nics' argument with specific net-id." % {
+                "server": server.name})
+
+    if use_floating_ip:
+        fip = self._attach_floating_ip(server, floating_network)
+    else:
+        internal_network = list(server.networks)[0]
+        fip = {"ip": server.addresses[internal_network][0]["addr"]}
+
+    if wait_for_ping:
+        self._wait_for_ping(fip["ip"])
+
+    return server, {"ip": fip.get("ip"),
+                    "id": fip.get("id"),
+                    "is_floating": use_floating_ip}
+```
+
+喔，看到 "server = self.\_boot\_server(image, flavor, **kwargs)"，这个家伙又调用了 `_boot_server` 方法：`rally/rally/benchmark/scenarios/nova/utils.py`
+
+```python
+def _boot_server(self, image_id, flavor_id,
+                 auto_assign_nic=False, name=None, **kwargs):
+
+    server_name = name or self._generate_random_name()
+    secgroup = self.context.get("user", {}).get("secgroup")
+    if secgroup:
+        if "security_groups" not in kwargs:
+            kwargs["security_groups"] = [secgroup["name"]]
+        elif secgroup["name"] not in kwargs["security_groups"]:
+            kwargs["security_groups"].append(secgroup["name"])
+
+    if auto_assign_nic and not kwargs.get("nics", False):
+        nets = [net["id"] for net in
+                self.context.get("tenant", {}).get("networks", [])]
+        if nets:
+            # NOTE(amaretskiy): Balance servers among networks:
+            #     divmod(iteration % tenants_num, nets_num)[1]
+            net_idx = divmod(
+                (self.context["iteration"]
+                 % self.context["config"]["users"]["tenants"]),
+                len(nets))[1]
+            kwargs["nics"] = [{"net-id": nets[net_idx]}]
+
+    server = self.clients("nova").servers.create(
+        server_name, image_id, flavor_id, **kwargs)
+... ...
+```
+
+终于找到根源了，我们倒回去看问题：
+
+1. 最终 "\_boot\_server()" 方法调用的是 novaclient 的 "servers.create()"，这个就先不管了，至少知道：**server\_name**、**image\_id**、**flavor_id** 是必需参数，其余传进来的参数都作为 **kwarg 可变参数传给 novaclient 了；
+1. 在 "\_boot\_runcommand\_delete()" 方法中，已经传递了 "key\_name" 参数，作为 **kwargs 可变参数传给 "\_boot\_server\_with\_fip()" 方法；
+1. "\_boot\_server\_with\_fip()" 方法**本应该**将 **kwargs 可变参数传递给 "\_boot\_server()" 方法；
