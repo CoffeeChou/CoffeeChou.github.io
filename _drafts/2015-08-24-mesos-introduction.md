@@ -32,4 +32,21 @@ Mesos 由管理运行在各个集群节点上的 slave 守护进程的 **master 
 
 ![图]()
 
+上图展示了一个框架如何调度并运行任务的示例。在第一步中，slave1 向 master 报告它有 4 个 CPU 和 4GB 的内存空闲。于是 master 调用了分配模块，告诉 framework1 可以提供所有可用资源。在第二步中，master 发送了一个描述了这些资源的资源提供给 framework1。在第三步中，framework 的 scheduler 回应了 master 一条关于在 slave 上运行了 2 个任务的信息，使用了 2 个CPU；1GB 内存和 1 个 CPU 用于第一个任务；2GB 内存用于第二个任务。最后，在第四步，master 发送任务给 slave，这个任务要求分配合适的资源给 framework 的 executor，executor 将启动两个任务（用虚线描绘的部分）。由于 1 个 CPU 和 1GB 内存仍然空闲，此时分配模块会将他们提供给 framework2。此外，当任务完成而资源变为空闲时，资源提供进程会重复上述步骤。
+
+而由 Mesos 提供的轻量接口允许它扩展并允许 framework 独立发展。framework 会拒绝不满足其限制的提议并接受那些能够满足的。由其是我们发现了一个简单的称为延迟调度的策略，它会在 framework 中等待指定的时间来获得节点保存的输入数据，产生接近最优的数据局部性。
+
+## Mesos 的特行
+
+* 使用 ZooKeeper 复制 master 以实现容错
+* 可以扩展上千台节点
+* 使用 Linux 容器将任务隔离
+* 多种资源的调度（内存和 CPU 等）
+* 支持 JAVA、Python 和 C++ API 以部署并行应用
+* 查看集群状态的 Web UI
+
+有一些软件项目构建在 Apache Mesos 之上：
+
+### 长期运行的服务
+
 
