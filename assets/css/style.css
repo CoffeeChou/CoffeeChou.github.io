@@ -98,7 +98,6 @@ a {
   width: 165px;
   height: 100%;
   background: #1A1A1A;
-  border-right: 1px solid #3c4149;
   box-shadow: inset -15px 0 15px -15px #222;
   float: left;
   position: relative;
@@ -137,21 +136,15 @@ a {
   margin: 0;
   padding: 0;
   font-size: 17px;
-  border-top: 1px solid #3c4149;
-  border-bottom: 1px solid #000000;
   list-style: none; }
 
 .tags__li {
   padding: 12px 35px 9px;
-  border-top: 1px solid #000000;
-  border-bottom: 1px solid #3c4149;
   cursor: pointer; }
   .tags__li.active {
     margin-right: -1px;
-    color: #1A1A1A;
-    background: #fafafa;
-    border-right: 1px solid #fafafa;
-    border-radius: 5px 0 0 5px;
+    color: #FAFAFA;
+    background: #F76F60;
     position: relative;
     -webkit-transition: none;
     -moz-transition: none;
@@ -159,8 +152,8 @@ a {
     -o-transition: none;
     transition: none; }
     .tags__li.active:hover {
-      color: #1A1A1A;
-      background: #fafafa; }
+      color: #FAFAFA;
+      background: #F76F60; }
     .tags__li.active:before, .tags__li.active:after {
       content: "";
       width: 6px;
@@ -170,13 +163,9 @@ a {
       right: -3px; }
     .tags__li.active:before {
       top: -6px;
-      border-right: 2px solid #fafafa;
-      border-bottom: 2px solid #fafafa;
       border-radius: 0 0 6px 0; }
     .tags__li.active:after {
       bottom: -6px;
-      border-right: 2px solid #fafafa;
-      border-top: 2px solid #fafafa;
       border-radius: 0 6px 0 0; }
 
 #tags__bottom {
@@ -223,7 +212,7 @@ a {
   width: 420px;
   height: 100%;
 //  background: rgba(250, 250, 250, 0.95);
-  background: url(/assets/img/mew.jpg);
+  background: url(/assets/img/bg7.jpg);
   background-size:100% 100%;
   border-right: 1px solid #e5e8ec;
   float: left;
