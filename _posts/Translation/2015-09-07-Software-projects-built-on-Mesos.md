@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 可以构建在 Mesos 之上的软件工程
-category: 翻译学习
+category: 翻译之路
 ---
 
 上一篇 blog 翻译了 Mesos 的一些介绍，Mesos 的主要架构是：Master、Slave、Framework。

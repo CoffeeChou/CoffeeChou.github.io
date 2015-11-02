@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Github -- 同步一个上游的 Fork
-category: 技术探讨
+category: 技术之旅
 ---
 
 Fork 一个上游的项目，然后将 Fork 的项目 clone 到本地，使劲写。有一天突然发现，诶，上游更新了～那么问题来了，要把上游的更新内容同步到本地来。

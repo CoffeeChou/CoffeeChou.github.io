@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Rally and Docker
-category: 技术探讨
+category: 技术之旅
 keywords: Rally, Docker, OpenStack, 测试
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Rally 生成 HTML 的图表信息
-category: 技术探讨
+category: 技术之旅
 keywords: OpenStack, Rally
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Rally 的安装和简单使用
-category: 技术探讨
+category: 技术之旅
 keywords: OpenStack, Rally, 安装, 使用
 ---
 

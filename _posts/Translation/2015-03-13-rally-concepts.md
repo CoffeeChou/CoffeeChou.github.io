@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Rally 的概念
-category: 翻译学习
+category: 翻译之路
 keywords: OpenStack, Rally
 ---
 

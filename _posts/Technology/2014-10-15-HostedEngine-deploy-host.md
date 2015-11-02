@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 部署 Hosted-Engine 的主机
-category: 技术探讨
+category: 技术之旅
 keywords: oVirt, Hosted Engine
 ---
 

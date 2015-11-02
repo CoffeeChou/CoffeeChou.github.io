@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 以 Apache Mesos 计算的开源数据中心
-category: 翻译学习
+category: 翻译之路
 ---
 
 原文链接：[点我点我](http://opensource.com/business/14/9/open-source-datacenter-computing-apache-mesos)
