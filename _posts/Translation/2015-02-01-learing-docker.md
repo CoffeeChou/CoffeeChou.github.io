@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 学习了下 Docker
-category: 翻译之路
+tag: 翻译之路
 ---
 
 最近折腾 OpenStack，比如 Fuel，比如 Rally，会看到一些跟 Docker 相关的东西，突然就来了兴趣。

@@ -1,7 +1,8 @@
 ---
 layout: post
 title: 什么是 OpenStack ?
-category: 翻译之路
+tag: [翻译之路, OpenStack]
+keywords: openstack
 ---
 
 刚开始接触 OpenStack，只能从文档开始。于是打算先翻译点东西。

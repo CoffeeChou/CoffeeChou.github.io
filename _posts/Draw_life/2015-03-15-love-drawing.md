@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 纪念
-category: 小小日子
+tag: 小小日子
 keywords: 宫崎骏, 画
 ---
 
