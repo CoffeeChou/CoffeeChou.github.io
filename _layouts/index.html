@@ -17,8 +17,9 @@
         <a href="/index.html" id="avatar"></a>
         <ul id="tags__ul">
           <li id="pl__all" class="tags__li tags-btn active">所有文章</li>
-          {% for category in site.categories %} 
-            <li id="{{ category[0] }}" class="tags__li tags-btn">{{ category[0] }}</li>
+          {% assign sorted_tags = (site.tags | sort) %}
+          {% for tag in sorted_tags %} 
+            <li id="{{ tag[0] }}" class="tags__li tags-btn">{{ tag[0] }}</li>
           {% endfor %}
         </ul>
 
@@ -37,7 +38,8 @@
 
         <nav id="pl__container">
         {% for post in site.posts %}
-          <a class="{{ post.categories }} pl__all" href="{{ post.url }}"><span class="pl__circle"></span><span class="pl__title">{{ post.title }}</span><span class="pl__date">{{ post.date | date: "%b %Y" }}</span></a>
+          <!--<a class="{{ post.categories }} pl__all" href="{{ post.url }}"><span class="pl__circle"></span><span class="pl__title">{{ post.title }}</span><span class="pl__date">{{ post.date | date: "%b %Y" }}</span></a>-->
+          <a class="{% for tag in post.tags %}{{ tag }} {% endfor %} pl__all" href="{{ post.url }}"><span class="pl__circle"></span><span class="pl__title">{{ post.title }}</span><span class="pl__date">{{ post.date | date: "%b %Y" }}</span></a>
         {% endfor %}
         </nav>
       </div> <!-- end #posts-list -->
