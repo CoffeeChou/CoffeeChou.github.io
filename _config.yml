@@ -7,9 +7,12 @@ author:
   email: coffee.zyr@gmail.com
 
 # 使用 markdown 格式
-markdown: redcarpet
-redcarpet:
-  extensions: ["tables", "highlight"]
+# markdown: redcarpet
+# redcarpet:
+#   extensions: ["tables", "highlight"]
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
 
 # disqus 设置
 disqus:
