@@ -1,16 +1,26 @@
-permalink: /:year/:month/:day/:title.html
-rouge: true
+# auther
+keywords: ["blog", "jekyll"]
 
-# 作者信息
-author:
-  name: Coffee
+# Jekyll configuration
+markdown:          kramdown
+highlighter:       rouge
+excerpt_separator: <!--more-->
+permalink:         /articles/:year-:month-:day/:title
+
+kramdown:
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  enable_coderay: false
+
+
+# Site Owner configuration
+owner:
+  name: CoffeeChou
+  avatar: jidi-1.jpg
+  job: "A jekyll theme"
+  bio: "To be better Coffee."
   email: coffee.zyr@gmail.com
-
-# 使用 markdown 格式
-markdown: redcarpet
-redcarpet:
-  extensions: ["tables", "highlight"]
-
-# disqus 设置
-disqus:
-  shortname: coffeechou
+  disqus-shortname: coffeechou
+  github: coffeechou

@@ -1,10 +1,5 @@
-### 用 jekyll 搭建博客
+### CoffeeChou 的博客
 
-本博客是根据以下提示进行搭建的，首先表示感谢 :-)
+博客还是要写的，万一有人看呢...
 
-
-* [在Github上搭建Jekyll博客和创建主题](http://yansu.org/2014/02/12/how-to-deploy-a-blog-on-github-by-jekyll.html#gpvur)
-* 主题来自于 [3-Jekyll](https://github.com/P233/3-Jekyll)
-
-
-还不完整，正在修改。
+主题很美丽，从 [http://themes.jekyllrc.org/](http://themes.jekyllrc.org/) 上搜刮过来的 :-) github 地址是：[https://github.com/renyuanz/leonids/](https://github.com/renyuanz/leonids/)
