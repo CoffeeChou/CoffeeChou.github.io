@@ -46,6 +46,7 @@
   .author_bio {
     font-size: 90%;
     display: block;
+    white-space: pre;
   }
   @include media-query($medium-screen) {
     text-align: right;

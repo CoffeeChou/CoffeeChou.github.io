@@ -19,8 +19,10 @@ kramdown:
 owner:
   name: CoffeeChou
   avatar: jidi-1.jpg
-  job: "A jekyll theme"
-  bio: "To be better Coffee."
+  job: "一只喵，有时画画，常常锻炼，总是发呆"
+  bio: |
+    我们终其一生，都在寻找幸福的路。  
+    --寂地
   email: coffee.zyr@gmail.com
   disqus-shortname: coffeechou
   github: coffeechou
