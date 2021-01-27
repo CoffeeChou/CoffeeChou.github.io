@@ -330,3 +330,24 @@ for i in range(10):
         - <code>api.py</code>
         - <code>website.py</code>
     - <code>requirements.txt</code>
+
+## Locust 的配置文件
+
+可以将一些测试配置写入配置文件（如：<code>locust.conf</code>），就不需要命令行的参数来完成了。如：
+```shell
+locustfile = test.py
+host = http://www.example.com
+headless = true
+users = 10
+spawn-rate = 2
+run-time = 30s
+```
+
+执行命令时可以这样：
+```shell
+$ locust --config=locust.conf
+```
+
+该配置将进入非 GUI 模式。
+
+如果不指定 <code>headless</code> 和 <code>run-time</code>，则进入 GUI 模式。
