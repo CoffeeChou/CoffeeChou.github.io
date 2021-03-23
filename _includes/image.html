@@ -1,5 +1,9 @@
 <figure>
+  {% if include.style %}
+  <img style="{{ include.style }}" src="{{ include.src }}" alt="{{ include.alt }}" />
+  {% else %}
   <img style="max-width: 80%" src="{{ include.src }}" alt="{{ include.alt }}" />
+  {% endif %}
   <figcaption class="image-caption">
   {% if include.desc %}
   {{ include.desc }}
