@@ -1,4 +1,4 @@
-# auther
+# auth0r
 keywords: ["blog", "jekyll"]
 
 # Jekyll configuration
@@ -26,3 +26,4 @@ owner:
   email: coffee.zyr@gmail.com
   disqus-shortname: coffeechou
   github: coffeechou
+  rss: feed.xml
