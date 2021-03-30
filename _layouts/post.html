@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<a class="btn" href= "{{ site.url }}/" >
+<a class="btn" href= "/" >
   Home
 </a>
 {% if page.image.feature %}
@@ -11,7 +11,7 @@ layout: default
   {% if page.image.feature contains 'https' or page.image.feature contains 'http' %}
   "{{ page.image.feature }}"
   {% else %}
-  "{{ site.url }}/img/{{ page.image.feature }}"
+  "/img/{{ page.image.feature }}"
   {% endif %}
   alt="{{ page.title | escape }} feature image">
 
@@ -48,9 +48,9 @@ layout: default
   <h6>Share on: </h6>
   <ul>
     <li>
-      <script type="text/javascript" src="{{ site.url }}/js/jquery-3.2.1.min.js"></script>
-      <script type="text/javascript" src="{{ site.url }}/js/jquery.qrcode.min.js"></script>
-      <script type="text/javascript" src="{{ site.url }}/js/qrcode.js"></script>
+      <script type="text/javascript" src="/js/jquery-3.2.1.min.js"></script>
+      <script type="text/javascript" src="/js/jquery.qrcode.min.js"></script>
+      <script type="text/javascript" src="/js/qrcode.js"></script>
       <div class="qrcode" id="post-qrcode"></div>
       <a id="weixin-btn" href="#" class="weixin btn" title="Share on Weixin"><i class="fa fa-weixin"></i><span> 微信</span></a>
       <script type="text/javascript">

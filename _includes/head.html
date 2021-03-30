@@ -24,9 +24,9 @@
   <meta name="twitter:title" content="{{ title | escape }}">
   <meta name="twitter:description" content="{{ description | escape }}">
   {% if page.image.feature %}
-    <meta property="twitter:image" content="{{ site.url }}/img/{{ page.image.feature }}">
+    <meta property="twitter:image" content="/img/{{ page.image.feature }}">
   {% else %}
-    <meta property="twitter:image" content="{{ site.url }}/img/leonids-logo.png">
+    <meta property="twitter:image" content="/img/leonids-logo.png">
   {% endif %}
 
   <!-- Open Graph Tags -->
@@ -35,22 +35,22 @@
   <meta property="og:title" content="{{ title | escape }}">
   <meta property="og:description" content="{{ description | escape }}">
   {% if page.image.feature %}
-    <meta property="og:image" content="{{ site.url }}/img/{{ page.image.feature }}">
+    <meta property="og:image" content="/img/{{ page.image.feature }}">
   {% else %}
-    <meta property="og:image" content="{{ site.url }}/img/leonids-logo.png">
+    <meta property="og:image" content="/img/leonids-logo.png">
   {% endif %}
   <title>{{ title }}</title>
 
   <!-- CSS files -->
-  <link rel="stylesheet" href="{{ site.url }}/css/font-awesome.min.css">
-  <link rel="stylesheet" href="{{ site.url }}/css/main.css">
+  <link rel="stylesheet" href="/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/css/main.css">
 
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ "/feed.xml" | prepend: site.url }}" />
 
   <!-- Icons -->
   <!-- 16x16 -->
-  <link rel="shortcut icon" href="{{ site.url }}/logo.png">
+  <link rel="shortcut icon" href="/logo.png">
   <!-- 32x32 -->
-  <link rel="shortcut icon" href="{{ site.url }}/logo.png">
+  <link rel="shortcut icon" href="/logo.png">
 </head>
