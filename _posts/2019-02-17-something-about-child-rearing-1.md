@@ -13,7 +13,7 @@ comments: true
 
 其实，关于养育，我和萌达爸爸是一直在思考的，也一直会关注各种育儿公众号、论坛、书籍。
 
-{% include splite_lines.html %}
+{% include split_lines.html %}
 
 这次的春节，萌达小朋友分别去了爸爸老家和妈妈老家，也就是爷爷家和外婆家。
 

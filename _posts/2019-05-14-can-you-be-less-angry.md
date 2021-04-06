@@ -11,7 +11,7 @@ comments: true
 
 意识到这一点，我和萌达爸爸也会很留意萌达小朋友和我们自己的情绪管理问题。
 
-{% include splite_lines.html %}
+{% include split_lines.html %}
 
 今天，发生了一件有趣的事情。
 
@@ -27,7 +27,7 @@ comments: true
 
 萌达小朋友的一句话，冲散了所有不愉快的情绪。
 
-{% include splite_lines.html %}
+{% include split_lines.html %}
 
 萌达爸爸曾经和他说过：当你生气的时候，你可以大声喊，我生气了，我很生气！但你不可以摔东西；如果爸爸生气了，你也可以说爸爸，你说爸爸你不要生气。而今天，萌达小朋友做到了。
 

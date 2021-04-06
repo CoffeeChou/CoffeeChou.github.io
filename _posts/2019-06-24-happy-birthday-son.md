@@ -11,13 +11,13 @@ comments: true
 
 <!--more-->
 
-{% include splite_lines.html %}
+{% include split_lines.html %}
 
 记得你的第一次微笑，天真无邪；记得你的第一次翻身，吃力而搞笑；记得你的第一次爬行，努力地坚持；记得你的第一次走路，步履蹒跚。你的到来，让爸爸妈妈人生充满了爱和惊喜。
 
 {% include image.html src="/img/2019_birthday/family.jpg" alt="family" %}
 
-{% include splite_lines.html %}
+{% include split_lines.html %}
 
 萌达，这一年里，你学会了很多很多的本领。
 
@@ -37,7 +37,7 @@ comments: true
 
 萌达，你真的很棒！
 
-{% include splite_lines.html %}
+{% include split_lines.html %}
 
 萌达，你是一个温柔善良的小男孩。每一次，你到小区楼下和小朋友玩耍时，总是愿意分享自己的玩具。有时候，想玩别人的玩具时，你会和善地和小朋友交涉，从来不争不抢。很快，就有很多小朋友喜欢和你玩耍，你几乎成了小区里公认的最友善的小朋友。
 
@@ -52,7 +52,7 @@ comments: true
 
 你真的是个小天使！
 
-{% include splite_lines.html %}
+{% include split_lines.html %}
 
 再过几个月，你就要上幼儿园了。这将是你第一次离开爸爸妈妈身边，自己去与他人建立信任关系，自己去处理和解决遇到的各种事情。
 
@@ -78,7 +78,7 @@ comments: true
 
 {% include image.html src="/img/2019_birthday/walking.jpg" alt="walking" %}
 
-{% include splite_lines.html %}
+{% include split_lines.html %}
 
 萌达，生日快乐！请你健康快乐地慢慢长大。
 
