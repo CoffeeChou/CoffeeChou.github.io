@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 常用命令行工具 -- curl
-categroies: ["技术"]
+categories: ["技术"]
 comments: true
 ---
 
