@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-
+<a id="top" style="padding-top: 100%;"></a>
 <a class="btn" href= "/" >
   Home
 </a>
@@ -41,7 +41,7 @@ layout: default
 </div>
 
 <div class="top-btn">
-    <a class="btn" href=""><i class="fa fa-arrow-up"></i> Top</a>
+    <a class="btn" href="#top"><i class="fa fa-arrow-up"></i> Top</a>
 </div>
 
 <div class="share-buttons">
@@ -52,7 +52,7 @@ layout: default
       <script type="text/javascript" src="/js/jquery.qrcode.min.js"></script>
       <script type="text/javascript" src="/js/qrcode.js"></script>
       <div class="qrcode" id="post-qrcode"></div>
-      <a id="weixin-btn" href="#" class="weixin btn" title="Share on Weixin"><i class="fa fa-weixin"></i><span> 微信</span></a>
+      <p id="weixin-btn" class="weixin btn" title="Share on Weixin"><i class="fa fa-weixin"></i><span> 微信</span></p>
       <script type="text/javascript">
         var $jq = jQuery.noConflict();
         $jq('#post-qrcode').hide();
