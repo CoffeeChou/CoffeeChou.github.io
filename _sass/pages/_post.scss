@@ -282,6 +282,8 @@ a.read-more {
   position: fixed;
   right: 30px;
   bottom: 5%;
+  cursor: pointer;
+  z-index: 9999;
 }
 
 // Splite lines
