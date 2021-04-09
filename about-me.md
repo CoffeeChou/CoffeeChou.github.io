@@ -21,7 +21,7 @@ title: 关于我的碎碎念
 - 微信公众号 [萌爸萌妈的碎碎念](https://mp.weixin.qq.com/s?__biz=MzU3NDg1NTQ2OQ==&mid=2247484175&idx=1&sn=340bf5df152719a4ff9ed064d3eeb024&chksm=fd2d434dca5aca5b2e37ae63e3c051f12df964423b138414ecd75ecd0ba1ed3cd6e4966881ef&mpshare=1&scene=1&srcid=0127dE1MESMpdm1n0GkCu6YV&sharer_sharetime=1611738393978&sharer_shareid=a1681652511f31acd550944ce3b2b2ca&exportkey=AR%2BcWJvhK9lSmqlG6rZ9qAM%3D&pass_ticket=UCGg5pk29AG8UwF0ZiGOz2pqmj%2FtX14K2690jXYcO8wR8wFNOSrOnCif2ueNuriq&wx_header=0#rd)：分享育儿小故事和感悟，算是一种记录成长和生活的方式吧。
 {% include image.html style="max-width: 100px;" src="/img/wechat-official-account/wechat-qrcode.jpg" alt="二维码" desc="" %}
 
-- 曾经是一名测试工程师，现在是一名即将回归的测试工程师。
+- 曾经是一名测试工程师，现在是一名回归的测试工程师。
 
 - 一个无趣的人。社交恐惧。常常尬聊。
 
@@ -37,3 +37,5 @@ title: 关于我的碎碎念
 不必努力加油，<br>
 一切顺其自然。<br>
 然后呢，然后大概就会好转。”
+
+- Don't worry, be happy :-)

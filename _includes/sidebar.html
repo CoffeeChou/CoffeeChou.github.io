@@ -2,7 +2,7 @@
 
 <div class="cover-card table-cell table-middle">
   {% if author.avatar %}
-  <a href="/articles/0001-01-01/about-me.html">
+  <a href="/about-me.html">
     <img src="/img/{{ author.avatar }}" alt="" class="avatar">
   </a>
   {% endif %}
@@ -16,7 +16,11 @@
       </li>
       {% for page in site.pages %} {% if page.title %}
       <li class="nav-item">
-        <a href="{{ site.url }}{{ page.url }}">{{ page.title }}</a>
+        {% if page.name == "about-me.md" %}
+          <a href="/about-me.html">about me</a>
+        {% else %}
+          <a href="{{ page.url }}">{{ page.title }}</a>
+        {% endif %}
       </li>
       {% endif %} {% endfor %}
     </ul>
