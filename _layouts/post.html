@@ -43,6 +43,15 @@ layout: default
     <a class="btn"><i class="fa fa-angle-up"></i> Top</a>
 </div>
 
+<div class="prev-next">
+  {% if page.previous.url %}
+    <a class="prev" href="{{ page.previous.url }}">&laquo; {{ page.previous.title }}</a>
+  {% endif %}
+  {% if page.next.url %}
+    <a class="next" href="{{ page.next.url }}">{{ page.next.title }} &raquo;</a>
+  {% endif %}
+</div>
+
 <div class="share-buttons">
   <h6>Share on: </h6>
   <ul>

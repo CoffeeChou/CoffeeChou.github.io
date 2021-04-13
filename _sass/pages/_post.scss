@@ -294,3 +294,15 @@ a.read-more {
   padding-top: 15px;
   letter-spacing: 2px;
 }
+
+// prev-next
+.prev-next {
+  display: flex;
+  justify-content: space-between;
+}
+.prev {
+  float: left;
+}
+.next {
+  float: right;
+}
