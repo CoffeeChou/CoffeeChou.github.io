@@ -50,10 +50,10 @@ pm.variables.set("variable_key", "variable_value");
 
 ### 访问变量
 
-在配置中访问变量，只需要写成 <code>{\{variable_key}}</code> 就可以了。
+在配置中访问变量，只需要写成 <code>{ {variable_key}}</code> 就可以了。
 
 > **注意**：
-> 这里实际是没有 <code>\</code> 的，只是 markdown 的格式会导致大括号显示不出来，加了反斜杠转义就这样了，下同。
+> 这里实际是没有 <code>空格</code> 的，只是 markdown 的格式会导致大括号显示不出来，需要加空格让它不要识别为网页元素。下同。
 
 在脚本里访问变量可以这样：
 ```javascript
@@ -74,13 +74,13 @@ pm.variables.get("variable_key");
 
 Postman 还提供了动态参数，比如：
 
-- <code>{\{$guid}}</code> : 可以生成一个 v4 的 guid
-- <code>{\{$timestamp}}</code> : 可以获取当前的时间戳（单位是秒）
-- <code>{\{$randomInt}}</code> : 随机生成一个 1-1000 之间的整数
+- <code>{ {$guid}}</code> : 可以生成一个 v4 的 guid
+- <code>{ {$timestamp}}</code> : 可以获取当前的时间戳（单位是秒）
+- <code>{ {$randomInt}}</code> : 随机生成一个 1-1000 之间的整数
 
 如果要在 pre-request 里使用动态参数，可以使用： <code>pm.variables.replaceIn()</code>：
 ```javascript
-pm.variables.replaceIn("{\{$randomFirstName}}");
+pm.variables.replaceIn("{ {$randomFirstName}}");
 ```
 
 
