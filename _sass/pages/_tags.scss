@@ -14,6 +14,13 @@ ul.tag-cloud {
 }
 
 .tag-list {
+  @include media-query($small-screen) {
+    column-count: 1;
+  }
+  @include media-query($medium-screen) {
+    column-count: 2;
+    column-width: auto;
+  }
   .tag-group {
     margin-bottom: 2em;
     .tag-group-title {
@@ -24,6 +31,7 @@ ul.tag-cloud {
     .tag-item {
       padding-left: 1em;
       margin-bottom: .5em;
+      color: $warning;
       a {
         color: $text-color;
         &:hover,
