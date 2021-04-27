@@ -4,6 +4,18 @@
   <div class="timeline" id="timeline">
     {% for career in site.data.index.careers %}
           <div class="archive-title"><div class="archive-year"><strong>{{ career.date }}</strong> {{ career.job }} @ <a href="{{ career.link }}">{{ career.name }}</a></div></div>
+          <div class="bio-data">{{ career.desc }}</div>
+          {% if career.projects %}
+          <div class="bio-data">
+              {% for project in career.projects %}
+              <div class="bio-data"><span>{{ project.name }}: {{ project.info }}</span>
+                {% for details in project.details %}
+                <div class="bio-data" style="margin-bottom: 0;"><span style="font-size: 25px;">• </span>{{ details }}</div>
+                {% endfor %}
+              </div>
+              {% endfor %}
+          </div>
+          {% endif %}
     {% endfor %}
   </div>
 </div>
