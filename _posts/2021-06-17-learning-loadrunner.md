@@ -49,6 +49,8 @@ Micro Focus LoadRunner 包含以下概念：
 
 ### LoadRunner 的基本术语
 
+{% include image.html src="/img/LoadRunner/LoadRunner-Terminologies.png" desc="" alt="" %}
+
 LoadRunner 的初学者需要了解一些基本术语。基本术语可以帮助我们在进行性能测试过程中理解 LoadRunner 的核心内容。
 
 - **SLA**: 即 Service Level Agreement，服务水平协议，是测试者和客户端之间认同的一个测试指标，也可以认为是性能需求。例如：某应用程序 X 要在一个小时内以 2TPS 处理 100 个用户的负载。
