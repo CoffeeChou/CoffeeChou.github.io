@@ -109,3 +109,20 @@ merge 之后，再次贡献代码时：
     ~~~
 
 此补充参考了[**另一篇博客**](http://blog.blkart.org/?p=333)。
+
+### 六年后的补充
+
+几年没用 git 之后，我还可以再翻看这篇文章来进行操作，做笔记真是一件不错的事情。
+
+我还顺便翻到了六年前尝试、想要、最终没做的事情：给 rally 的上游提交 pull request。那时我还画了个流程图，也放到这里保存吧。
+
+{% include image.html src="/img/pr_to_upstream.png" alt="" desc="给上游提交 pull requests 的流程" %}
+
+流程如下，命令就是图里用到的命令，就不写下来了：
+
+1. fork 代码到自己的 github 仓库；
+1. 把代码 clone 到本地，编写/修改代码；
+1. 提交代码；
+1. 将提交的代码 push 到自己所 fork 的仓库里；
+1. 在 github 上向上游提交 merge request；
+1. 如果上游合并了所提交的 merge request，那么需要在本地执行合并上游的操作，让本地和上游保持一致。
