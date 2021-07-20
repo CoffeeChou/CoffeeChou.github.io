@@ -252,7 +252,8 @@ Copyright (c) 1999-2020 The Apache Software Foundation
 
 - **-n**: 运行时，使用 -n 参数，JMeter 就会启动非 GUI 模式，即命令行模式（如果不用这个参数的话，会启动 GUI 模式）。
 - **-t**: 指定测试计划文件，jmx 格式，在 JMeter 的 <code>bin/templates/</code> 目录下有例子。
-- **-l**: 指定测试写入测试结果的文件，格式是 csv。JMeter 执行时默认会将结果写入 <code>jmeter.log</code>，每次运行时会重新生成。如果想保存结果，需要用 -l 指定结果文件。
+- **-l**: 指定测试写入测试结果的文件，格式是 csv，如果没有指定，则不保存测试结果。
+- **-j**: Jmeter 的日志文件，JMeter 执行时默认会将结果写入 <code>jmeter.log</code>，每次运行时会重新生成。如果想保存日志，需要用 -j 指定结果文件。
 - **-J**: 运行时设置 JMeter 的参数，可设置的参数可以参考 <code>jmeter.properties</code>。
 
 以上是常用参数，其他的先不展开了。
