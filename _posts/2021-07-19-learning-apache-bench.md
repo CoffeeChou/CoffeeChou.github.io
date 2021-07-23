@@ -66,15 +66,15 @@ $ vim tmp/data.out
 ```
 
 - **starttime**: 请求开始的日期时间。
-- **seconds**: 和 starttime 是一样的，但它是 Unix 下的时间戳格式，可以通过命令 `$ date -d @1496160697` 得到时间信息。
+- **seconds**: 和 starttime 是一样的，但它是 Unix 下的时间戳格式，可以通过命令 `$ date -d @1496160697` 得到时间信息；一般，如果是 13 位的，取前 10 位即可，后 3 位是毫秒。
 - **ctime**: 连接时间。
 - **dtime**: 执行时间。
 - **ttime**: 总的时间，即 ttime = ctime + dtime
 - **wait**: 等待时间。
 
-这几个时间的定义和区别可以看下面这个图，就很容易区分了（不过图不是很清晰）：
+这几个时间的定义和区别可以看下面这个图，就很容易区分了：
 
-{% include image.html src="/img/multiple_items.jpg" desc="" alt="" %}
+{% include image.html src="/img/multiple_items.png" desc="" alt="" %}
 
 还有一些其他的命令参数，看 help 命令就好了。
 
