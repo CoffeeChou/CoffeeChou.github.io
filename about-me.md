@@ -3,6 +3,19 @@ layout: post
 title: 关于我的碎碎念
 ---
 
+### 我的朋友们
+
+- [zhaochao](https://zhaochao.github.io/)
+- [blkart](https://blog.blkart.org/)
+- [huntxu](https://huntxu.github.io/)
+- [mathslinux](https://mathslinux.github.io/)
+- [apporc]()
+- [lijiansheng]()
+
+{% include split_lines.html %}
+
+### 碎碎念
+
 - 别害怕，要做自己喜欢的事情。
 
 - 家有萌娃一枚，呆猫两只。
