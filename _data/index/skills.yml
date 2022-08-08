@@ -1,0 +1,25 @@
+-
+  name: Linux
+  details: 
+    - 日常使用 Linux，算是半个 Linux 用户
+    - 可以编写 shell 脚本来执行测试、收集测试结果等
+-
+  name: Python
+  details:
+    - 对 Python 比较熟悉，常用 python 编写测试脚本
+    - 曾经用 python 编写测试工具、运维工具
+-
+  name: 测试工具
+  details:
+    - 熟悉 Jmeter 压力测试工具的使用，可编写测试脚本，对测试结果进行分析
+    - 熟悉 Postman 接口测试工具的使用，可编写测试脚本进行接口测试
+    - 熟悉 Locust 性能测试框架的使用，可配合 python 语言编写测试脚本
+    - 熟悉 LoadRunner 性能测试工具的使用
+    - 熟悉 Selenium 自动化测试框架，可以配合 python 语言编写自动化测试脚本
+    - 熟悉 Fio, Sysbench, iperf 等服务器磁盘、CPU、内存、网络性能测试工具的使用
+-
+  name: 其他工具
+  details:
+    - 熟悉 Git 的使用，搭建过 GitLab 平台并负责维护
+    - 熟悉禅道的使用和测试流程
+    - 了解 Jenkins 的使用，可以搭建 CI/CD 环境

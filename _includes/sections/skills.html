@@ -1,0 +1,15 @@
+<div class="navy-line"></div>
+<h1><span data-i18n="skills.my_skills">Skills</span></h1>
+
+<div class="archive">
+  <div class="timeline" id="timeline">
+    {% for skill in site.data.index.skills %}
+    <div class="archive-title bio">
+        <div class="archive-title"><div class="archive-year"><strong>{{ skill.name }}</strong></div></div>
+        {% for details in skill.details %}
+        <div class="bio-data" style="margin-bottom: 0;"><span style="font-size: 25px;">• </span>{{ details }}</div>
+        {% endfor %}
+    </div>
+    {% endfor %}
+  </div>
+</div>
